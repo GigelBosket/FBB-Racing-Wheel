@@ -1,0 +1,7 @@
+.zip filter=lfs diff=lfs merge=lfs -text
+.step filter=lfs diff=lfs merge=lfs -text
+[[:space:]]CAD/STEP/WheelBase-and-SteeringWheel.STEP filter=lfs diff=lfs merge=lfs -text
+[[:space:]]CAD/Wheel[[:space:]]Base[[:space:]]+[[:space:]]Steering[[:space:]]Wheel[[:space:]]assemb.zip filter=lfs diff=lfs merge=lfs -text
+*.STEP filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.ZIP filter=lfs diff=lfs merge=lfs -text
