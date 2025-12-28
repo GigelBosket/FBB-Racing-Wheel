@@ -1,4 +1,4 @@
-# Total Time Spent so far: 79 Hours
+# Total Time Spent: 87 Hours
 
 ## Date: 12/7/2025
 ## Time Spent: 25 Hours
@@ -123,4 +123,40 @@ Updated the BOM as I forgot a few things including power supply and some wires.
 <img width="1157" height="990" alt="image" src="https://github.com/user-attachments/assets/cfa84ddf-a0ed-403f-b30d-2bdda7971081" />
 
 ### Note: I saw I have to write how much I spend each day but I can't remember. Until 20 december I had school and each day from monday to friday I worked around 2 hours(to this project) per day and in the weekends some times even 10-12 hours but I didn't include that because I was working pretty slow and inefficient.
+
+## Date: 12/28/2025
+## Time Spent: 1 Hour
+### 3D settings and planning for the print
+So after speaking with a friend that has a 3d printer I will be making the parts from ASA because it's strong and easy to print and the failed parts number will be very low (hopefully 0)
+
+The parts that connect the motor to the steering wheel are gonna be made with 95% infill as they will have some strain on them. Other parts will be printed with 15-30% depending on how much weight or strain will support each.
+
+The full print will weight around 2.1 kg (quite a lot) but it will resist all the strain and weight.
+<img width="599" height="729" alt="image" src="https://github.com/user-attachments/assets/0434f314-d989-4317-be6b-1ad63bc41eea" />
+
+## Date: 12/28/2025
+## Time Spent: 3 Hours
+### Wrote the code for Wheel Pico 2
+So I wrote the code for the Wheel pico 2 in c++ using the raspberry pi pico SDK downloaded as an extension for VS Code.
+
+Core 1 will read the buttons and encoders while core 0 will get that data and send it as a struct to the Pico 2 of the wheelbase throw SPI protocol. The pico 2 of the wheel will act as a slave while the pico 2 of the wheelbase will act as a Master.
+
+I had some small problems with cmake as I mostly wrote code for arduino devices using PlatformIO, and when I was making c++ programs for windows I never bothered to learn c++. But I solved it pretty easy with some tutorials.
+
+I used gemini a bit because I had some questions as writing code with this SDK is a bit different than what I was used.
+
+In the final the code compiled and will be tested after I buy the pico 2.
+<img width="1862" height="986" alt="image" src="https://github.com/user-attachments/assets/c34816d9-1912-4cbb-83b4-8bb072513154" />
+
+## Date: 12/29/2025
+## Spent Time: 4 Hours
+### Wrote the code for pico 2 of the base to act as Controller
+Wrote the code for the pico 2 of the wheel base to act as a Controller (HID) when connected to a pc.
+
+I used TinyUSB library to make the communication between the pico 2 and the pc which was easier than I expected. I use some calls throw SPI protocol to get the data from the pico 2 in the wheel every 5 miliseconds.
+
+In the feature I will also add support for pedals, shifter and other devices but for now I made only what I will need for this project.
+
+I don't have a pico 2(as I mentioned previously) to test it on but it compiled and I hope it works in real life.
+<img width="1863" height="981" alt="image" src="https://github.com/user-attachments/assets/7491f7b0-7daf-4472-8b6a-2338f7a34a03" />
 
