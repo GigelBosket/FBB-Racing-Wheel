@@ -48,28 +48,22 @@ int main() {
             spi_read_blocking(SPI_PORT, 0, (uint8_t*)&incoming_data, sizeof(incoming_data));
             gpio_put(PIN_CS, 1);
 
-            // 2. Process Encoder Virtual Buttons
             uint32_t virtual_buttons = 0;
             for (int i = 0; i < 6; i++) {
                 if (incoming_data.encoder_diff[i] > 0) virtual_buttons |= (1 << (18 + (i * 2)));
                 if (incoming_data.encoder_diff[i] < 0) virtual_buttons |= (1 << (18 + (i * 2) + 1));
             }
 
-            // 3. Send Report
             send_hid_report(incoming_data, virtual_buttons);
-            
-            // 4. Reset encoder diffs so they don't repeat
-            // (The slave handles the physical reset, but we clear our local copy)
         }
     }
 }
 
-// --- TinyUSB Callbacks ---
-// Invoked when received GET_REPORT control request
+
 uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t* buffer, uint16_t reqlen) {
     return 0;
 }
 
-// Invoked when received SET_REPORT control request
+
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize) {
 }
