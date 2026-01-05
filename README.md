@@ -20,7 +20,7 @@ Wheel final version below
 <img width="2700" height="2160" alt="Rendered_model" src="https://github.com/user-attachments/assets/4ad0c0ba-7ba9-4ac2-b20a-4ed86052c3d6" />
 
 Wheel base
-<img width="1037" height="703" alt="Screenshot_970" src="https://github.com/user-attachments/assets/251fb067-d079-46ef-ac8b-58bd3bfb4026" />
+<img width="949" height="687" alt="Screenshot_26" src="https://github.com/user-attachments/assets/36a71498-3e33-4f54-bb68-2784b6b21767" />
 
 Close image from the steering wheel face
 <img width="1119" height="759" alt="Screenshot_2" src="https://github.com/user-attachments/assets/293f904f-e37f-4b4d-a492-fae1b916f17b" />
@@ -31,7 +31,7 @@ The back of the steering wheel
 Simple wiring scheme for the Pico 2 of the wheel base to the wires of the slip ring. The image also includes a simple connections from the pico 2 to some sensors if you want to directly connect any sensor to it.
 <img width="882" height="882" alt="image" src="https://github.com/user-attachments/assets/f8afc24e-18cd-4b4b-a6d5-c3ef8f1d3372" />
 
-Steering wheel buttons/encoders will be connected to the pico 2 throw a matrix system in which each button is connected to column and row and the pico 2 will send a signal to each column and then wait for output from any of the rows and that's how it will find which buttons got pressed. This matrix system allows the usage of a high number of buttons without haveing a pin for each button. Also a diode will be used to prevent the current from flowing the opposite direction and causing ghosting. The order in which the buttons are connected doesn't matter so I won't include a photo of that. Also I won't add the file for schematic as it's a very simple schematic which isn't linked to other files and it's used to have and idea how the connections work for who doesn't already know(the wires can be connected to others pins and still work fine).
+Steering wheel buttons/encoders will be connected to the pico 2 throw a matrix system in which each button is connected to column and row and the pico 2 will send a signal to each column and then wait for output from any of the rows and that's how it will find which buttons got pressed. This matrix system allows the usage of a high number of buttons without haveing a pin for each button. Also a diode will be used to prevent the current from flowing the opposite direction and causing ghosting. The order in which the buttons are connected doesn't matter so I won't include a photo of that. Also I won't add the file for schematic as it's a very simple schematic which isn't linked to other files and it's used to have and idea how the connections work for who doesn't already know(the wires can be connected to others pins and still work fine).Just don't forget to connect it to the pogo pins which then go to the Pico 2 in the wheel base which will process the data, don't forget to wire the pins accordingly for SPI protocol(example above). The pico 2 of the steering wheel is gonna be the slave while the pico in the base is gonna be the master. Slave awaits commands from master.
 
 **Print tips**
 So the parts used to connect the motor to the wheel should be printed with 95% infill, the oher parts should be printed with 15-30% infill as they won't have that much strain on them
@@ -41,6 +41,19 @@ Also if you are a total beginer you should download only the stl files as they a
 I used Raspberry Pi Pico extension in VS code which downloads the SDK for pico and other packages automaticly. If you want to use my code for Pico 2 just git clone my project then open the folder with the code you want to upload on your pico, in VS Code (after installing the extension) and just compile, select port of Pico 2 and upload.
 
 For the ODESC 4.2 I will use the code and software made by FFBeast (https://ffbeast.github.io/docs/en/downloads_wheel.html) and I recommend you use it too unless you want to make it on your own(which is a great way to learn). I m gonna use their software as it is pretty good and at my current experience it would take a while to make something as good as that. How ever I have in plan to make mine in the feature.
+
+Diagram for ODESC 4.2 below. Note that you only have to connect the wires for Motor(the 3wires presented in the image), input from power supply (but you could use a battery as well) and rotary encoder(highlited in the image with a red circle which has 4 pins: A and B for signal , GND and 5V)
+<img width="1600" height="1600" alt="ODESC V4 2 diagram" src="https://github.com/user-attachments/assets/6e6f4b12-5dc4-450d-9308-d04cb4ac6feb" />
+
+
+ODESC V4.2:
+
+<img width="350" height="320" alt="image" src="https://github.com/user-attachments/assets/da1947d6-4c27-48db-9168-45188a52b0e6" />
+
+Pico 2:
+
+<img width="308" height="683" alt="image" src="https://github.com/user-attachments/assets/b735fb2d-9f53-4037-b1ea-d4aecd753f7e" />
+
 
 |BOM Total                                |            |           |                  |           |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |-----------------------------------------|--------|--------------|-------------------|---------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
