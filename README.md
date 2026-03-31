@@ -38,6 +38,7 @@ PCB image of it's top copper layer
 <img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/51572883-41f6-4b31-b744-a83d6907efab" />
 
 
+
 Steering wheel buttons/encoders will be connected to the pico 2 throw a matrix system in which each button is connected to column and row and the pico 2 will send a signal to each column and then wait for output from any of the rows and that's how it will find which buttons got pressed. This matrix system allows the usage of a high number of buttons without haveing a pin for each button. Also a diode will be used to prevent the current from flowing the opposite direction and causing ghosting. The order in which the buttons are connected doesn't matter so I won't include a photo of that. Also I won't add the file for schematic as it's a very simple schematic which isn't linked to other files and it's used to have and idea how the connections work for who doesn't already know(the wires can be connected to others pins and still work fine).Just don't forget to connect it to the pogo pins which then go to the Pico 2 in the wheel base which will process the data, don't forget to wire the pins accordingly for SPI protocol(example above). The pico 2 of the steering wheel is gonna be the slave while the pico in the base is gonna be the master. Slave awaits commands from master.
 
 **Print tips**
@@ -52,6 +53,9 @@ I used Raspberry Pi Pico extension in VS code which downloads the SDK for pico a
 Pico 2:
 
 <img width="308" height="683" alt="image" src="https://github.com/user-attachments/assets/b735fb2d-9f53-4037-b1ea-d4aecd753f7e" />
+
+What you need to wire to the bldc motor driver PCB:
+<img width="1081" height="898" alt="PCB small diagram" src="https://github.com/user-attachments/assets/0dce71b9-a41f-4921-b7a7-5714274419a3" />
 
 
 | BOM Total                                 |          |                | Price in us dollars |          |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -130,6 +134,7 @@ Price is around 23 euros for parts only on LCSC website + other fees.
 
 
 
+The next 2 BOMS are an aproximation for how much for just one of them. It is not 100% accurate
 
 |Wheelbase                                |        |              |         |         |Price in US dollars|                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |-----------------------------------------|--------|--------------|---------|---------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
